@@ -47,7 +47,7 @@ async function exists (gname) {
     if (!e.hasOwnProperty('code') || e.code !== 'ENOENT') throw e
   }
   try {
-    const resp = await got(`https://raw.githubusercontent.com/isysd/_blocktree/isysd/.gitmodules`)
+    const resp = await got(`https://raw.githubusercontent.com/guld/_blocktree/guld/.gitmodules`)
     if (resp && resp.body) {
       return resp.body.indexOf(`[submodule "${gname}"]`) > -1
     }
@@ -65,9 +65,15 @@ function validate (gname) {
   } else return true
 }
 
+async function branches (gname) {
+  var cfg = await getConfig(path.join(home, '.git', 'config'))
+  return Object.keys(cfg).filter(l => l.startsWith('branch')).map(l => l.split(' ')[0].trim(`"`))
+}
+
 module.exports = {
   getName: getName,
   getFullName: getFullName,
   exists: exists,
-  validate: validate
+  validate: validate,
+  branches: branches
 }
