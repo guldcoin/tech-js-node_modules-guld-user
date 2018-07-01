@@ -65,9 +65,13 @@ function validate (gname) {
   } else return true
 }
 
-async function branches (gname) {
+async function branches () {
   var cfg = await getConfig(path.join(home, '.git', 'config'))
-  return Object.keys(cfg).filter(l => l.startsWith('branch')).map(l => l.split(' ')[0].trim(`"`))
+  return Object.keys(cfg).filter(l => {
+    return l.startsWith('branch')
+  }).map(l => {
+    return l.split(' ')[1].replace(/"/g, '')
+  })
 }
 
 module.exports = {
