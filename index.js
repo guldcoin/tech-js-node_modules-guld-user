@@ -47,7 +47,7 @@ async function exists (gname) {
     if (!e.hasOwnProperty('code') || e.code !== 'ENOENT') throw e
   }
   try {
-    const resp = await got(`https://raw.githubusercontent.com/guld/_blocktree/guld/.gitmodules`)
+    const resp = await got(`https://raw.githubusercontent.com/guldcoin/_blocktree/guld/.gitmodules`)
     if (resp && resp.body) {
       return resp.body.indexOf(`[submodule "${gname}"]`) > -1
     }

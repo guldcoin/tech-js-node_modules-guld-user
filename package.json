@@ -1,6 +1,6 @@
 {
   "name": "guld-user",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Guld user management tools.",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,11 @@
   "author": "isysd",
   "license": "MIT",
   "dependencies": {
+    "got": "^8.3.1",
     "guld-env": "^1.0.2",
+    "guld-fs": "^1.0.0",
     "guld-git-config": "^1.0.0",
+    "user-home": "^2.0.0",
     "window-or-global": "^1.0.1"
   },
   "devDependencies": {
