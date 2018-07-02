@@ -1,6 +1,6 @@
 # guld-user
 
-Guld user management tools. Get, list, and check users of the guld group.
+Guld user management tools. Get, list, and check users of the guld group. Also list locally tracked branches or git hosts.
 
 ### Install
 
@@ -13,10 +13,10 @@ npm i guld-user
 ##### Node
 
 ```
-const { getName, getFullName, validate, exists } = require('guld-user')
+const { getName, getFullName, validate, exists, getHosts } = require('guld-user')
 ```
 
 ##### CLI
 
-See [guld-uesr-cli](https://github.com/isysd/tech-js-node_modules-guld-user-cli).
+See [guld-user-cli](https://github.com/isysd/tech-js-node_modules-guld-user-cli).
 

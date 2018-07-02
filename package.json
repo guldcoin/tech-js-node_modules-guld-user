@@ -1,6 +1,6 @@
 {
   "name": "guld-user",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Guld user management tools.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "got": "^8.3.1",
     "guld-env": "^1.0.2",
     "guld-fs": "^1.0.0",
-    "guld-git-config": "^1.0.0",
+    "guld-git-config": "^1.1.2",
     "user-home": "^2.0.0",
     "window-or-global": "^1.0.1"
   },

@@ -74,10 +74,17 @@ async function branches () {
   })
 }
 
+async function getHosts (user) {
+  user = user || await getName()
+  var cfg = await getConfig('public', user)
+  return cfg.host || {}
+}
+
 module.exports = {
   getName: getName,
   getFullName: getFullName,
   exists: exists,
   validate: validate,
-  branches: branches
+  branches: branches,
+  getHosts: getHosts
 }

@@ -1,6 +1,6 @@
 /* eslint-env node, mocha */
 const assert = require('chai').assert
-const { getName, getFullName, exists, validate } = require('./index.js')
+const { getName, getFullName, exists, validate, getHosts } = require('./index.js')
 const { getConfig, setConfig, unsetConfig, writeConfig } = require('guld-git-config')
 const global = require('window-or-global')
 const path = require('path')
@@ -13,6 +13,11 @@ var fullname
 describe('guld-config', function () {
   before(async function () {
     guldname = await getName()
+  })
+  it('getHosts', async function () {
+    var hosts = await getHosts(guldname)
+    assert.isTrue(Object.keys(hosts).length > 0)
+    assert.isTrue(hosts.hasOwnProperty('github'))
   })
   describe('getName', function () {
     after(async function () {
