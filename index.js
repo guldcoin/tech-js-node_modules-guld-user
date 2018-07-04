@@ -80,11 +80,17 @@ async function getHosts (user) {
   return cfg.host || {}
 }
 
+async function getHostName (user, host) {
+  var hosts = getHosts(user)
+  if (hosts && hosts[host]) return hosts[host]
+}
+
 module.exports = {
   getName: getName,
   getFullName: getFullName,
   exists: exists,
   validate: validate,
   branches: branches,
-  getHosts: getHosts
+  getHosts: getHosts,
+  getHostName: getHostName
 }
