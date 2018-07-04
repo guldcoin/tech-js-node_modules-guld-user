@@ -18,7 +18,7 @@
   "author": "isysd",
   "license": "MIT",
   "dependencies": {
-    "got": "^8.3.1",
+    "got": "^8.3.2",
     "guld-env": "^1.0.2",
     "guld-fs": "^1.0.0",
     "guld-git-config": "^1.1.2",

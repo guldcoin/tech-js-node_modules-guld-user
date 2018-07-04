@@ -74,15 +74,15 @@ async function branches () {
   })
 }
 
-async function getHosts (user) {
+async function getAlias (user, network) {
   user = user || await getName()
   var cfg = await getConfig('public', user)
-  return cfg.host || {}
-}
-
-async function getHostName (user, host) {
-  var hosts = getHosts(user)
-  if (hosts && hosts[host]) return hosts[host]
+  if (cfg.aliases) {
+    if (network) {
+      if (cfg.aliases.hasOwnProperty(network)) return cfg.aliases[network]
+    } else return cfg.aliases
+  }
+  return {}
 }
 
 module.exports = {
@@ -91,6 +91,5 @@ module.exports = {
   exists: exists,
   validate: validate,
   branches: branches,
-  getHosts: getHosts,
-  getHostName: getHostName
+  getAlias: getAlias
 }
