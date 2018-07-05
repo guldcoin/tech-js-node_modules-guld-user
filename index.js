@@ -66,12 +66,17 @@ function validate (gname) {
 }
 
 async function branches () {
-  var cfg = await getConfig(path.join(home, '.git', 'config'))
+  fs = fs || await getFS()
+  var heads = await fs.readdir(path.join(home, '.git', 'refs', 'heads')) || []
+  return heads
+  // this config file method is not how `git branch --list` works
+  /*
   return Object.keys(cfg).filter(l => {
     return l.startsWith('branch')
   }).map(l => {
     return l.split(' ')[1].replace(/"/g, '')
   })
+  */
 }
 
 async function getAlias (user, network) {
