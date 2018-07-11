@@ -21,7 +21,7 @@
     "got": "^8.3.2",
     "guld-env": "^1.0.4",
     "guld-fs": "^1.2.5",
-    "guld-git-config": "^1.2.1",
+    "guld-git-config": "^1.2.2",
     "user-home": "^2.0.0",
     "window-or-global": "^1.0.1"
   },
