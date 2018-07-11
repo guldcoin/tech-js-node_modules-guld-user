@@ -19,9 +19,9 @@
   "license": "MIT",
   "dependencies": {
     "got": "^8.3.2",
-    "guld-env": "^1.0.5",
-    "guld-fs": "^1.2.6",
-    "guld-git-config": "^1.2.3",
+    "guld-env": "^1.0.7",
+    "guld-fs": "^1.2.7",
+    "guld-git-config": "^1.2.4",
     "user-home": "^2.0.0",
     "window-or-global": "^1.0.1"
   },
