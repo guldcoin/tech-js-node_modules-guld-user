@@ -1,6 +1,6 @@
 {
   "name": "guld-user",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Guld user management tools.",
   "main": "index.js",
   "scripts": {
