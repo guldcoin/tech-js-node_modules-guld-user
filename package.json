@@ -19,9 +19,9 @@
   "license": "MIT",
   "dependencies": {
     "got": "^8.3.2",
-    "guld-env": "^1.0.4",
-    "guld-fs": "^1.2.5",
-    "guld-git-config": "^1.2.2",
+    "guld-env": "^1.0.5",
+    "guld-fs": "^1.2.6",
+    "guld-git-config": "^1.2.3",
     "user-home": "^2.0.0",
     "window-or-global": "^1.0.1"
   },
@@ -45,5 +45,7 @@
   "readme": "README.md",
   "engines": {
     "node": ">=7"
-  }
+  },
+  "homepage": "https://github.com/isysd/tech-js-node_modules-guld-user#readme",
+  "repository": "git@github.com:isysd/tech-js-node_modules-guld-user.git"
 }
