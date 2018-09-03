@@ -18,5 +18,5 @@ const { getName, getFullName, validate, exists, getHosts } = require('guld-user'
 
 ##### CLI
 
-See [guld-user-cli](https://github.com/isysd/tech-js-node_modules-guld-user-cli).
+See [guld-user-cli](https://bitbucket.org/isysd/tech-js-node_modules-guld-user-cli).
 
