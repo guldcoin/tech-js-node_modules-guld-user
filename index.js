@@ -1,4 +1,4 @@
-const { getJS, setGlobal } = require('guld-env')
+const guldEnv = require('guld-env')
 const { getFS } = require('guld-fs')
 const { getConfig } = require('guld-git-config')
 const global = require('window-or-global')
@@ -11,19 +11,30 @@ async function getName () {
   var cfg
   if (global.GULDNAME && typeof global.GULDNAME !== 'undefined' && global.GULDNAME.length > 0) {
     return global.GULDNAME
-  } else if (getJS().startsWith('node')) {
+  } else if (guldEnv.JS.startsWith('node')) {
     if (process.env.GULDNAME && typeof process.env.GULDNAME !== 'undefined' && process.env.GULDNAME.length > 0) {
-      return setGlobal('GULDNAME', process.env.GULDNAME)
+      global.GULDNAME = process.env.GULDNAME
+      return global.GULDNAME
     } else {
       cfg = await getConfig('global')
-      if (cfg && cfg.user && cfg.user.username) return setGlobal('GULDNAME', cfg.user.username)
-      if (process.env.USER) return setGlobal('GULDNAME', process.env.USER)
+      if (cfg && cfg.user && cfg.user.username) {
+        global.GULDNAME = cfg.user.username
+        return global.GULDNAME
+      }
+      if (process.env.USER) {
+        global.GULDNAME = process.env.USER
+        return global.GULDNAME
+      }
     }
   } else {
     cfg = await getConfig('global')
-    if (cfg && cfg.user && cfg.user.username) return setGlobal('GULDNAME', cfg.user.username)
+    if (cfg && cfg.user && cfg.user.username) {
+      global.GULDNAME = cfg.user.username
+      return global.GULDNAME
+    }
   }
-  return setGlobal('GULDNAME', 'guld')
+  global.GULDNAME = 'guld'
+  return 'guld'
 }
 
 async function getFullName () {
@@ -32,7 +43,10 @@ async function getFullName () {
     return global.GULDFULLNAME
   } else {
     cfg = await getConfig('global')
-    if (cfg && cfg.user && cfg.user.name) return setGlobal('GULDFULLNAME', cfg.user.name)
+    if (cfg && cfg.user && cfg.user.name) {
+      global.GULDFULLNAME = cfg.user.name
+      return global.GULDFULLNAME
+    }
   }
 }
 

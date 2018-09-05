@@ -14,6 +14,12 @@ Guld user management tools.
 npm i guld-user
 ```
 
+##### Browser
+
+```sh
+curl https///bitbucket.org/guld/tech-js-node_modules-guld-user/raw/guld/guld-user.min.js -o guld-user.min.js
+```
+
 ### Usage
 
 ##### Node
@@ -24,7 +30,7 @@ const { getName, getFullName, validate, exists, getHosts } = require('guld-user'
 
 ##### CLI
 
-See [guld-user-cli](https://github.com/isysd/tech-js-node_modules-guld-user-cli).
+See [guld-user-cli](https://bitbucket.org/isysd/tech-js-node_modules-guld-user-cli).
 
 ### License
 
