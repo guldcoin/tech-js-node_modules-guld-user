@@ -6,11 +6,15 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha",
     "lint": "eslint --env browser *.js*",
-    "fix": "eslint --fix *.js*"
+    "fix": "eslint --fix *.js*",
+    "test:lint": "npm run lint && npm run test",
+    "build": "webpack"
   },
   "keywords": [
     "guld",
     "user",
+    "node",
+    "browser",
     "identity",
     "config",
     "environment"
@@ -20,8 +24,8 @@
   "dependencies": {
     "got": "^9.2.0",
     "guld-env": "^2.0.6",
-    "guld-fs": "^1.3.2",
-    "guld-git-config": "^1.2.12",
+    "guld-fs": "^1.3.3",
+    "guld-git-config": "^1.2.16",
     "user-home": "^2.0.0",
     "window-or-global": "^1.0.1"
   },
@@ -39,7 +43,10 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^5.2.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "webpack": "^4.17.2",
+    "mochify": "^5.8.1",
+    "puppeteer": "^1.7.0"
   },
   "pre-commit": [
     "lint",
@@ -49,6 +56,10 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://bitbucket.org/isysd/tech-js-node_modules-guld-user#readme",
-  "repository": "git@bitbucket.org:isysd/tech-js-node_modules-guld-user.git"
+  "homepage": "https://guld.tech/lib/guld-user.html",
+  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-user",
+  "browser": "guld-user.min.js",
+  "eslintIgnore": [
+    "*.min.js"
+  ]
 }

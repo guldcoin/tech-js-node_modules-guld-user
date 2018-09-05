@@ -1,6 +1,8 @@
 /* eslint-env node, mocha */
+process.env.GULDNAME = 'guld'
+process.env.USER = 'guld'
 const assert = require('chai').assert
-const { getName, getFullName, exists, validate, getAlias } = require('./index.js')
+const { getName, getFullName, exists, validate, getAlias } = require('../index.js')
 const { getConfig, setConfig, unsetConfig, writeConfig } = require('guld-git-config')
 const global = require('window-or-global')
 const path = require('path')
@@ -89,18 +91,18 @@ describe('guld-config', function () {
   describe('exists', function () {
     before(async function () {
       fs = fs || await getFS()
-      fs.rename(path.join(home, '.blocktree', 'isysd'), path.join(home, '.blocktree', 'isysd.bak'))
+      fs.rename(path.join(home, '.blocktree', 'guld'), path.join(home, '.blocktree', 'guld.bak'))
     })
     after(async function () {
       fs = fs || await getFS()
-      fs.rename(path.join(home, '.blocktree', 'isysd.bak'), path.join(home, '.blocktree', 'isysd'))
+      fs.rename(path.join(home, '.blocktree', 'guld.bak'), path.join(home, '.blocktree', 'guld'))
     })
     it('empty', async function () {
       var es = await exists()
       assert.isTrue(es)
     }).timeout(4000)
     it('remote', async function () {
-      var es = await exists('isysd')
+      var es = await exists('guld')
       assert.isTrue(es)
     }).timeout(4000)
     it('does not exists', async function () {
